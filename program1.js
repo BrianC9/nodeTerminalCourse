@@ -11,16 +11,11 @@ listaURLs.forEach((url, idx) => {
         }).on('error', (error) => {
             console.log("Hay un error en la peticion ", error)
         })
-        res.on("resume", () => {
+        res.on("end", () => {
 
-            console.log(`Peticion numero ${idx}`)
+            //console.log(idx, JSON.parse(datosRecibidos).text)
             console.log(datosRecibidos)
         })
-        res.on("close", () => {
 
-
-
-
-        })
     })
 })
